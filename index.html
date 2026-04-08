@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daniella Diaries | Shortie & Egusi Lover</title>
+  <!-- Playful fonts & vibe -->
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(145deg, #fef7e9 0%, #fff3d6 100%);
+      font-family: 'Quicksand', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.5rem;
+    }
+
+    .card {
+      max-width: 950px;
+      width: 100%;
+      background: rgba(255, 250, 240, 0.8);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 48px;
+      padding: 2.5rem 2rem;
+      box-shadow: 0 25px 40px -10px rgba(180, 100, 30, 0.2),
+                  0 10px 20px -5px rgba(0, 0, 0, 0.05),
+                  inset 0 2px 4px rgba(255, 255, 255, 0.8);
+      border: 1px solid #ffeacb;
+      transition: transform 0.25s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.01);
+    }
+
+    /* header area */
+    .header-badge {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 0.5rem;
+    }
+
+    h1 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: #4b2e1d;
+      text-shadow: 3px 3px 0 #f3d9b1;
+      display: inline-block;
+    }
+
+    .single-stamp {
+      background: #ffb347;
+      color: #2d1f0f;
+      padding: 0.4rem 1.2rem;
+      border-radius: 60px;
+      font-weight: 700;
+      font-size: 1.3rem;
+      border: 2px dashed #7b4a2c;
+      transform: rotate(-3deg);
+      box-shadow: 0 4px 0 #b45f2b;
+      letter-spacing: 1px;
+    }
+
+    .subhead {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #a1582b;
+      margin-top: -10px;
+      margin-bottom: 25px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .subhead span {
+      background: #ffddb0;
+      padding: 0.2rem 1rem;
+      border-radius: 40px;
+      font-size: 1.2rem;
+      border: 1px solid #c2845c;
+    }
+
+    /* shortie teaser section */
+    .height-police {
+      background: #fbe4c2;
+      border-radius: 30px;
+      padding: 1.8rem 1.8rem;
+      margin: 25px 0 30px;
+      border-left: 12px solid #dc6b3e;
+      box-shadow: 0 8px 0 #b45f2b, inset 0 1px 5px #fff5e6;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .ruler-emoji {
+      font-size: 4.2rem;
+      line-height: 1;
+      filter: drop-shadow(2px 4px 4px rgba(0,0,0,0.1));
+    }
+
+    .height-text {
+      flex: 1;
+    }
+
+    .height-text h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #3b281a;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .height-text p {
+      font-size: 1.35rem;
+      font-weight: 600;
+      color: #6b3f1f;
+      margin-top: 6px;
+    }
+
+    .shortie-meter {
+      background: #fff1e0;
+      padding: 0.4rem 1.2rem;
+      border-radius: 100px;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #9b4b2e;
+      border: 2px dotted #b35e2e;
+    }
+
+    /* fave food: Egusi & Fufu */
+    .food-zone {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      margin: 35px 0 30px;
+    }
+
+    .food-card {
+      background: #fcf3e4;
+      flex: 1 1 200px;
+      padding: 1.6rem 1.2rem;
+      border-radius: 40px;
+      text-align: center;
+      box-shadow: 0 12px 0 #cb8b5e, 0 6px 12px rgba(160, 80, 20, 0.15);
+      border: 1px solid #e7b587;
+      transition: all 0.15s;
+    }
+
+    .food-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 0 #b56b3f, 0 8px 16px rgba(160, 80, 20, 0.2);
+    }
+
+    .food-emoji {
+      font-size: 4.8rem;
+      margin-bottom: 5px;
+    }
+
+    .food-card h3 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #482818;
+    }
+
+    .food-desc {
+      font-size: 1.1rem;
+      background: #ffdbb5;
+      margin-top: 12px;
+      padding: 6px 12px;
+      border-radius: 30px;
+      font-weight: 600;
+      color: #452812;
+      border: 1px solid #b47a4b;
+    }
+
+    /* Tall boys + money  (playful tease) */
+    .love-section {
+      background: #ffefdb;
+      border-radius: 40px 40px 30px 30px;
+      padding: 1.8rem 2rem;
+      margin: 25px 0 20px;
+      border: 2px solid #eebb88;
+      box-shadow: inset 0 0 0 3px #fff3e3, 0 10px 0 #b7794e;
+    }
+
+    .love-header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+
+    .love-header h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #3e2c1d;
+    }
+
+    .tall-badge {
+      background: #24945e;
+      color: #fbf3d5;
+      padding: 8px 18px;
+      border-radius: 40px;
+      font-weight: 700;
+      font-size: 1.2rem;
+      box-shadow: 0 4px 0 #0f562f;
+      border: 1px solid #aae0b0;
+    }
+
+    .preference-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px 35px;
+      margin: 20px 0 10px;
+    }
+
+    .pref-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1.6rem;
+      background: #ffe5ca;
+      padding: 0.5rem 1.3rem;
+      border-radius: 60px;
+      border: 1px solid #d69c6a;
+    }
+
+    .pref-item span {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #302010;
+    }
+
+    .money-rain {
+      margin-top: 15px;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #1f5437;
+      background: #f3efb2;
+      padding: 0.5rem 1.4rem;
+      border-radius: 40px;
+      display: inline-block;
+      border: 2px dashed #b88638;
+    }
+
+    .tease-footnote {
+      margin-top: 15px;
+      font-size: 1.2rem;
+      color: #794f2e;
+      font-style: italic;
+      font-weight: 600;
+    }
+
+    /* footer/social like */
+    .footer-note {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 35px;
+      border-top: 3px dotted #deb887;
+      padding-top: 22px;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .single-alert {
+      background: #e1574b;
+      color: #fcf9e6;
+      padding: 0.5rem 1.5rem;
+      border-radius: 50px;
+      font-weight: 700;
+      font-size: 1.2rem;
+      box-shadow: 0 5px 0 #872e26;
+      transform: rotate(1deg);
+      border: 1px solid #ffb4a2;
+    }
+
+    .btn-playful {
+      background: #fecb8a;
+      border: none;
+      padding: 0.8rem 1.8rem;
+      border-radius: 60px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #402812;
+      box-shadow: 0 6px 0 #b27235, 0 2px 8px rgba(0,0,0,0.05);
+      border: 1px solid #ffeac2;
+      cursor: pointer;
+      transition: 0.1s ease;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    .btn-playful:active {
+      transform: translateY(4px);
+      box-shadow: 0 2px 0 #b27235, 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    /* responsive extras */
+    @media (max-width: 550px) {
+      .card { padding: 1.8rem 1.2rem; }
+      h1 { font-size: 2.4rem; }
+      .height-text h2 { font-size: 1.7rem; }
+      .pref-item { font-size: 1.3rem; }
+    }
+
+    /* floating hearts / playful detail */
+    .decor-line {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin: 8px 0 0;
+      font-size: 1.5rem;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+<div class="card">
+  
+  <!-- HEADER: DANIELLA + single stamp -->
+  <div class="header-badge">
+    <h1>🍲 DANIELLA</h1>
+    <div class="single-stamp">💔 SINGLE & FABULOUS</div>
+  </div>
+  <div class="subhead">
+    <span>✨ Official Shortie ✨</span>
+    <span>👑 Egusi Queen 👑</span>
+  </div>
+  
+  <!-- SHORTIE TEASE (ruler + height jokes) -->
+  <div class="height-police">
+    <div class="ruler-emoji">📏🧸</div>
+    <div class="height-text">
+      <h2>
+        ⚠️ SHORTIE ALERT ⚠️
+        <span style="font-size:1.8rem;">👀</span>
+      </h2>
+      <p>“Vertically challenged” but horizontally HUNGRY.</p>
+      <p style="font-size:1.2rem; margin-top:8px;">Daniella’s height: classified. Let’s just say she can hide behind a bowl of fufu and disappear. 🥷🏾</p>
+    </div>
+    <div class="shortie-meter">
+      4'11" ? 🤏🏾 <br> <span style="font-size:1rem;">(in spirit)</span>
+    </div>
+  </div>
+  
+  <!-- FAVE FOOD: EGUSI & FUFU (playful) -->
+  <div style="margin-top:5px;">
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <h2 style="font-size:2rem; color:#5d3a1f;">🍽️ FAVE FOOD OBSESSION</h2>
+      <span style="font-size:2rem;">🤤</span>
+    </div>
+  </div>
+
+  <div class="food-zone">
+    <div class="food-card">
+      <div class="food-emoji">🥘🍲</div>
+      <h3>EGUSI</h3>
+      <div class="food-desc">“Extra egusi, no sharing!”</div>
+      <p style="margin-top:12px; font-size:1.1rem; font-weight:500;">Daniella can smell egusi from 3 blocks away. She dreams about it. 🛌🍛</p>
+    </div>
+    <div class="food-card">
+      <div class="food-emoji">🥔🤲🏾</div>
+      <h3>FUFU</h3>
+      <div class="food-desc">“Swallow champion”</div>
+      <p style="margin-top:12px; font-size:1.1rem; font-weight:500;">Her fufu game: legendary. It disappears faster than her height. 🌀</p>
+    </div>
+  </div>
+  <div class="decor-line">
+    <span>🍛</span><span>🥄</span><span>🧂</span><span>🥣</span>
+  </div>
+  
+  <!-- TALL BOYS + MONEY (playful tease) -->
+  <div class="love-section">
+    <div class="love-header">
+      <h2>💘 Daniella’s type? </h2>
+      <div class="tall-badge">📏 6'0" AND ABOVE ONLY</div>
+    </div>
+    <p style="font-size:1.3rem; font-weight:600; color:#38210e;">She’s a shortie but her standards? SKY HIGH. ☁️📈</p>
+    
+    <div class="preference-list">
+      <div class="pref-item">
+        <span>🧍🏾‍♂️➡️🌲</span> <span>Tall boys (like, really tall)</span>
+      </div>
+      <div class="pref-item">
+        <span>💵💰💎</span> <span>Money moves only</span>
+      </div>
+    </div>
+    
+    <div class="money-rain">
+      💸 “If your wallet ain’t tall, keep walking.” — Daniella, probably.
+    </div>
+    
+    <div style="display:flex; gap:15px; margin-top:20px; flex-wrap:wrap;">
+      <span style="background:#f8d5aa; padding:6px 18px; border-radius:30px; font-weight:600;">🏦 Bank account > biceps</span>
+      <span style="background:#f8d5aa; padding:6px 18px; border-radius:30px; font-weight:600;">🦒 Must be able to reach the top shelf for her</span>
+    </div>
+    
+    <div class="tease-footnote">
+      😏 She’s single … but she’s waiting for a 6’4” billionaire who loves egusi. Good luck, shortie!
+    </div>
+  </div>
+  
+  <!-- BOTTOM FOOTER: extra tease, single reminder, playful button -->
+  <div class="footer-note">
+    <div class="single-alert">
+      🚨 CURRENTLY SINGLE 🚨
+    </div>
+    <div style="display:flex; gap:10px; align-items:center;">
+      <span style="font-size:1.5rem;">👰🏾‍♀️❌</span>
+      <span style="font-weight:700; font-size:1.2rem; color:#4b2a15;">No ring, just fufu.</span>
+    </div>
+    <button class="btn-playful" id="teaseButton">
+      🤣 TEASE DANIELLA AGAIN 🤣
+    </button>
+  </div>
+  
+  <!-- hidden playful extra line (for button interactivity) -->
+  <div style="margin-top:12px; text-align:right; opacity:0.8; font-weight:500;" id="dynamicMessage">
+    💬 “I’m not short, I’m concentrated awesome.” — Daniella
+  </div>
+</div>
+
+<script>
+  (function() {
+    // playful array of teasing messages
+    const teaseMessages = [
+      "💬 “I’m not short, I’m fun-sized for easier cuddles with tall rich guys.” — Daniella",
+      "💬 “If you’re under 6ft, bring a step stool and a bank statement.” — Daniella",
+      "💬 “My fufu portions are bigger than my height.” — Daniella",
+      "💬 “Egusi first, dates second.” — Daniella",
+      "💬 “Yes I’m single, the line for tall money men starts here ↓ (it’s short)” 😂",
+      "💬 “I only date skyscrapers with wallets.” — Daniella",
+      "💬 “They call me shortie, I call myself ‘pocket rocket with expensive taste’.” 🚀💎",
+      "💬 “If you can’t see me, it’s because your wallet isn’t tall enough.” 👛",
+      "💬 “I’m 5’2” … of pure sass and egusi power.” 🥘",
+      "💬 “My dream man? At least 6’2”, loves fufu, and his credit score is 800+.” 📊"
+    ];
+
+    const dynamicEl = document.getElementById('dynamicMessage');
+    const teaseBtn = document.getElementById('teaseButton');
+
+    // function to pick random tease
+    function randomTease() {
+      const randomIndex = Math.floor(Math.random() * teaseMessages.length);
+      dynamicEl.textContent = teaseMessages[randomIndex];
+      // add a tiny bounce effect
+      dynamicEl.style.transition = 'transform 0.1s';
+      dynamicEl.style.transform = 'scale(1.02)';
+      setTimeout(() => { dynamicEl.style.transform = 'scale(1)'; }, 100);
+    }
+
+    // initial random message on page load (optional)
+    window.addEventListener('DOMContentLoaded', () => {
+      // set a random one from the list (but keep default if we want)
+      const starterIndex = Math.floor(Math.random() * teaseMessages.length);
+      dynamicEl.textContent = teaseMessages[starterIndex];
+    });
+
+    // click handler
+    teaseBtn.addEventListener('click', randomTease);
+
+    // extra playful: also double clicking anywhere on card adds extra vibe? not necessary, but fun.
+    const card = document.querySelector('.card');
+    card.addEventListener('dblclick', function() {
+      const heart = document.createElement('span');
+      heart.textContent = ' 🍲❤️ ';
+      heart.style.fontSize = '2rem';
+      dynamicEl.appendChild(heart);
+      setTimeout(() => { 
+        if (dynamicEl.lastChild.nodeType === Node.TEXT_NODE || dynamicEl.lastChild.textContent.includes('🍲')) {
+          dynamicEl.lastChild.remove(); 
+        } else {
+          // just in case
+          const hearts = dynamicEl.querySelectorAll('span');
+          if(hearts.length) hearts[hearts.length-1]?.remove();
+        }
+      }, 800);
+    });
+
+    // Extra small touch: hover on shortie-meter
+    const meter = document.querySelector('.shortie-meter');
+    meter.addEventListener('mouseenter', () => {
+      meter.style.backgroundColor = '#fbd5b5';
+      meter.textContent = '🤏🏾 5’0” on a good day 🤏🏾';
+    });
+    meter.addEventListener('mouseleave', () => {
+      meter.style.backgroundColor = '#fff1e0';
+      meter.innerHTML = `4'11" ? 🤏🏾 <br> <span style="font-size:1rem;">(in spirit)</span>`;
+    });
+
+  })();
+</script>
+
+<!-- bonus: smooth touch -->
+</body>
+</html>
